@@ -26,19 +26,29 @@ def crearRandom(num):
 random = crearRandom(dificultad)
 acierto = False
 intentos = 0
+nuevoJuego = False
 
-while not acierto:
-    try:
-        intentos = intentos+1
-        userNum = input("Intente adivinar el número, introduzca uno:")
-        userNum = int(userNum)
-        if userNum > random:
-            print("Demasiado alto")
-        elif userNum < random:
-            print("Demasiado bajo")
-        else:
-            acierto = True
-    except:
-        print("Debe introducir un número")
-        
-print(f"¡Acertaste! Nº de intentos: {intentos}")
+while not nuevoJuego:
+    while not acierto:
+        try:
+            intentos = intentos+1
+            userNum = input("Intente adivinar el número, introduzca uno:")
+            userNum = int(userNum)
+            if userNum > random:
+                print("Demasiado alto")
+            elif userNum < random:
+                print("Demasiado bajo")
+            else:
+                acierto = True
+        except:
+            print("Debe introducir un número")
+            
+    print(f"¡Acertaste! Nº de intentos: {intentos}")
+    
+    siNo = ""
+    while siNo.lower() != "s" or siNo.lower() != "n":
+        siNo = input("¿Quieres jugar de nuevo (s/n)")
+        if siNo.lower() == "s":
+            nuevoJuego = True
+        elif siNo.lower() == "n":
+            nuevoJuego = False
