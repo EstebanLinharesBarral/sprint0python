@@ -45,9 +45,9 @@ def jugada(jugador, cpu):
     if ganador == "jugador":
         print("¡El jugador gana!")
     elif ganador == "cpu":
-        print("¡La CPU gana!")
+        print("¡La CPU gana esta ronda!")
     else:
-        print("¡Es un empate!")
+        print("¡Es un empate esta ronda!")
     
     return ganador
 
@@ -73,6 +73,11 @@ while nuevoJuego:
             jugador = jugador+1
         elif ganador == "cpu":
             cpu = cpu+1
+
+    if jugador > cpu:
+        print("¡El jugador gana la partida!")
+    else:
+        print("¡La CPU gana la partida!")
 
     siNo = ""
     while siNo != "s" and siNo != "n":
