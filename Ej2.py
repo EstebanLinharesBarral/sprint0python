@@ -10,6 +10,7 @@ victoria = {
     "spock": ["piedra", "tijera"]
 }
 
+#Función elección del jugador
 def jugadorJ():
     posible = False
     jugada = ""
@@ -24,12 +25,13 @@ def jugadorJ():
     
     return jugada
 
+#Función elección de la CPU
 def cpuJ():
     rnd = random.randint(0, len(opciones))
     return opciones[rnd]
 
-
-def jugada(jugador, cpu):
+#Función de la ronda
+def ronda(jugador, cpu):
     ganador = ""
     try:
         victoria[jugador].index(cpu)
@@ -51,6 +53,7 @@ def jugada(jugador, cpu):
     
     return ganador
 
+#Partida completa
 nuevoJuego = True
 
 while nuevoJuego:
@@ -67,7 +70,7 @@ while nuevoJuego:
             print("EL valor debe ser numérico")
     
     while jugador < rondas/2 and cpu < rondas/2:
-        ganador = jugada(jugadorJ(), cpuJ())
+        ganador = ronda(jugadorJ(), cpuJ())
 
         if ganador == "jugador":
             jugador = jugador+1
