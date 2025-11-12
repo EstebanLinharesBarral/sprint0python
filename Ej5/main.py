@@ -69,7 +69,7 @@ def main():
         val = False
         while not val:
             resp = input("\nEscoja una opción:\n")
-            if resp == "1" or resp == "2" or resp == "3" or resp == "4" or resp == "5":
+            if resp == "1" or resp == "2" or resp == "3" or resp == "4" or resp == "5" or resp == "6":
                 val = True
 
         if resp == "1":

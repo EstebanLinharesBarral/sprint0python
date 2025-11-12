@@ -44,11 +44,14 @@ while resp != "4":
             except:
                 print("La cantidad añadida no es una cantidad válida")
 
-            if retiro <= cuenta["saldo"]:
-                cuenta["saldo"] = cuenta["saldo"] - retiro
-            else:
-                print("No hay suficiente saldo para retirar esa cantidad")
-        print(f"Tu nuevo saldo es: {cuenta['saldo']}")
+            if val:
+                if retiro <= cuenta["saldo"]:
+                    cuenta["saldo"] = cuenta["saldo"] - retiro
+                else:
+                    print("No hay suficiente saldo para retirar esa cantidad")
+                
+        if val and retiro <= cuenta["saldo"]:
+            print(f"Tu nuevo saldo es: {cuenta['saldo']}")
 
     if resp == "4":
         print("FIN DEL PROGRAMA")

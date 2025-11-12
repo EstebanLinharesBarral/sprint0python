@@ -27,7 +27,7 @@ def jugadorJ():
 
 #Función elección de la CPU
 def cpuJ():
-    rnd = random.randint(0, len(opciones))
+    rnd = random.randint(0, len(opciones) - 1)
     return opciones[rnd]
 
 #Función de la ronda
