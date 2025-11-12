@@ -27,8 +27,7 @@ while resp != "5":
             print("El producto no existe en la lista")
 
     if resp == "3":
-        lista_compra.sort()
-        for p in lista_compra:
+        for p in sorted(lista_compra):
             print(p)
 
     if resp == "4":
